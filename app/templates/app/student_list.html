@@ -1,0 +1,38 @@
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>883</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+<a href="http://127.0.0.1:8000/"><button class="btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"/></svg></button></a>
+
+<br>
+<br>
+
+<body style="background-color: rgb(50, 50, 50);">
+<div class="container">
+    <div class="row" id="profile-wrapper" style="color: rgb(80, 80, 80);">
+        <div class="col-md-3">
+            <div class="card card-body h-1 border-info">
+                <h3>Students</h3>
+                <hr>
+<ul>
+{% for student in student_list %}
+      <li>
+<a href="{% url 'student_detail' student.pk %}"><button class="btn btn-dark">{{ student.name }}</button></a> - "{{ student.pk }}"
+          <br>
+          <br>
+      </li>
+    {% endfor %}
+ </ul>
+
+           </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
